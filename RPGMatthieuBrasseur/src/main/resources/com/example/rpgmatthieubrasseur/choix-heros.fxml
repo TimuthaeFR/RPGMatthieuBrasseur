@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="417.0" minWidth="654.0" prefHeight="417.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rpgmatthieubrasseur.ChoixHerosController">
+   <children>
+      <Label prefHeight="41.0" prefWidth="120.0" text="Choisissez vos héros !" translateX="267.0" translateY="10.0" />
+      <HBox prefHeight="88.0" prefWidth="654.0" translateY="10.0">
+         <children>
+            <Label prefHeight="41.0" prefWidth="251.0" text="Combien de héros participent à votre quête ?" translateX="10.0" />
+            <TextField fx:id="tfNbHeros" prefWidth="250.0" translateX="10.0" translateY="8.0" />
+            <Button fx:id="ChoixNbHero" mnemonicParsing="false" onAction="#submit" text="Entrer" translateX="30.0" translateY="8.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="lblChoixClasse" maxWidth="1.7976931348623157E308" text="Quelle est la classe du 1er héros ?" translateX="10.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0" translateX="40.0">
+               <children>
+                  <RadioButton fx:id="rbChasseur" mnemonicParsing="false" onAction="#imgHunter" text="Chasseur">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Classe" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbGuerrier" mnemonicParsing="false" onAction="#imgWarrior" text="Guerrier" toggleGroup="$Classe" translateY="20.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" translateX="50.0">
+               <children>
+                  <RadioButton fx:id="rbSoigneur" mnemonicParsing="false" onAction="#imgHealer" text="Soigneur" toggleGroup="$Classe" />
+                  <RadioButton fx:id="rbMage" mnemonicParsing="false" onAction="#imgMage" text="Mage" toggleGroup="$Classe" translateY="20.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" translateX="60.0">
+               <children>
+                  <Button fx:id="choixClasse" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#choixClasseHero" text="J'ai choisis !" translateX="10.0" translateY="20.0" />
+               </children>
+            </VBox>
+            <ImageView fx:id="imgHero" fitHeight="150.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true" translateX="50.0" />
+         </children>
+      </HBox>
+      <VBox prefHeight="229.0" prefWidth="654.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="655.0">
+                     <children>
+                        <Label text="Votre équipe est composée de :" />
+                        <Label fx:id="Equipe" prefHeight="17.0" prefWidth="307.0" text="Choissiez la classe du premier membre de votre équipe !" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label fx:id="lblDebut" alignment="CENTER_RIGHT" translateX="330.0" translateY="37.0" />
+            <Button fx:id="Debut" mnemonicParsing="false" onAction="#debutrpg" prefHeight="25.0" prefWidth="85.0" text="C'est partit !" translateX="554.0" translateY="10.0" />
+            <Button fx:id="réinit" mnemonicParsing="false" onAction="#réinitialiser" prefWidth="85.0" text="Réinitialiser" translateX="554.0" translateY="15.0" />
+         </children>
+      </VBox>
+   </children>
+</VBox>
